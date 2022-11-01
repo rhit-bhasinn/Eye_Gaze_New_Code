@@ -1,5 +1,6 @@
 #Testing123
-import mediapipe as mp
+import mediapipe as mp #import MediaPipe Python package
+# MediaPipe: Library used to detect face and hand landmarks
 import cv2
 import numpy as np
 import math
