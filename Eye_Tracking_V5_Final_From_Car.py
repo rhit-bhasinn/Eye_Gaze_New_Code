@@ -62,8 +62,9 @@ down_timer = 0 # down timer counter
 steer = HardwarePWM(pwm_channel=0, hz=1000) # create hardware PWM instance for steering with channel and frequency
 drive = HardwarePWM(pwm_channel=1, hz=1000) # create hardware PWM instance for driving with channel and frequency
 
-steer.start(50)  # steering hardware PWM where the number is the duty cycle (0.0 <= number <= 100.0)
-drive.start(50)  # driving hardware PWM where the number is the duty cycle (0.0 <= number <= 100.0)
+steer.start(50)  # steering hardware PWM where the number is the duty cycle (0.0 <= number <= 100.0) (50% = half of the time on and the other half off)
+drive.start(50)  # driving hardware PWM where the number is the duty cycle (0.0 <= number <= 100.0) (50% = half of the time on and the other half off)
+#Likely set to 50% to use less power and/or capture images on rising edges?
 
 #dwell times (Not sure if this is time spent not moving)
 drive_dwell = 10 # drive time spent wihtout moving?
@@ -92,8 +93,8 @@ def resetCar():
     global steer #Creates global variable steer within function
     global drive #Creates global variable drive within function
     
-    steer.change_duty_cycle(50) # Changes steer hardware PWM duty cycle to 50
-    drive.change_duty_cycle(50) # Changes drive hardware PWM duty cycle to 50
+    steer.change_duty_cycle(50) # Changes steer hardware PWM duty cycle to 50% (50% = half of the time on and the other half off)
+    drive.change_duty_cycle(50) # Changes drive hardware PWM duty cycle to 50% (50% = half of the time on and the other half off)
     
 def carOutput(gaze):
     #map gaze output from 0 to 100, 50 in the middle
