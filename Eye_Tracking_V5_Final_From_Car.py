@@ -14,18 +14,20 @@ import RPi.GPIO as GPIO # imports Python module to control the GPIO on a Raspber
 # GPIO: general-purpose input/output (GPIO) are uncommitted digital signal pins on an electronic circuit board which may be used as an input or output controllable by software.
 
 #GPIO setup
-GPIO.setmode(GPIO.BCM)
+GPIO.setmode(GPIO.BCM) # for GPIO numbering use BCM
 
 #lights
-light_list = (16,21,20,26)
+light_list = (16,21,20,26) #tuple (similar to list) for light pin numbers
 
+#setup
+GPIO.setup(light_list[0], GPIO.OUT) #sets GPIO pin 16 as output
+GPIO.setup(light_list[1], GPIO.OUT) #sets GPIO pin 21 as output
+GPIO.setup(light_list[2], GPIO.OUT) #sets GPIO pin 20 as output
+GPIO.setup(light_list[3], GPIO.OUT) #sets GPIO pin 26 as output
 
-GPIO.setup(light_list[0], GPIO.OUT)
-GPIO.setup(light_list[1], GPIO.OUT)
-GPIO.setup(light_list[2], GPIO.OUT)
-GPIO.setup(light_list[3], GPIO.OUT)
+GPIO.output(light_list[0], 1) #sets GPIO pin 16 to high
 
-GPIO.output(light_list[0], 1)
+# Debugging Code
 # for light in light_list:
 #         GPIO.output(light, 1)
 # 
