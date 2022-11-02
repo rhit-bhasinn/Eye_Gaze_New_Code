@@ -1,15 +1,17 @@
-#Testing123
+#Packages
 import mediapipe as mp # imports MediaPipe Python packages
 # MediaPipe: Library used to detect face and hand landmarks
 import cv2 # imports opencv-python packages
-# opencv-python: pre-built CPU-only OpenCV packages for Python
+# opencv-python: pre-built OpenCV packages for Python
 import numpy as np # imports NumPy Python Library
 # NumPy: Python library used for working with arrays
 import math # imports module for mathematical functions
 import itertools # imports Itertool module that allows for work with iterators
 # iterators: allows for iteration or traversal through the elements of a collection
-from rpi_hardware_pwm import HardwarePWM
-import RPi.GPIO as GPIO
+from rpi_hardware_pwm import HardwarePWM # imports HardwarePWM packages to allow for use of the Hardware PWM capabilities of the Raspberry Pi
+# Hardware PWM: Pulse-width modulation (PWM) alloes for the generation of a modulated signal which can be used for providing an analog output, variable speed, dimming, voltage between 0% and 100%, etc.
+import RPi.GPIO as GPIO # imports Python module to control the GPIO on a Raspberry Pi
+# GPIO: general-purpose input/output (GPIO) are uncommitted digital signal pins on an electronic circuit board which may be used as an input or output controllable by software.
 
 #GPIO setup
 GPIO.setmode(GPIO.BCM)
