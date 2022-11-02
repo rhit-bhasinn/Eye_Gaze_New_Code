@@ -55,26 +55,26 @@ overlay = () # empty overlay tuple
 facial_landmarks = () # empty facial landmarks tuple
 
 #counters
-drive_timer = 0
-down_timer = 0
+drive_timer = 0 # drive timer counter
+down_timer = 0 # down timer counter
 
 #drive and steer PWM
-steer = HardwarePWM(pwm_channel=0, hz=1000)
-drive = HardwarePWM(pwm_channel=1, hz=1000)
+steer = HardwarePWM(pwm_channel=0, hz=1000) # create hardware PWM instance for steering with channel and frequency
+drive = HardwarePWM(pwm_channel=1, hz=1000) # create hardware PWM instance for driving with channel and frequency
 
-steer.start(50)
-drive.start(50)
+steer.start(50)  # steering hardware PWM where the number is the duty cycle (0.0 <= number <= 100.0)
+drive.start(50)  # driving hardware PWM where the number is the duty cycle (0.0 <= number <= 100.0)
 
-#dwell times
-drive_dwell = 10
-down_dwell = 5
-enable_dwell = 30
+#dwell times (Not sure if this is time spent not moving)
+drive_dwell = 10 # drive time spent wihtout moving?
+down_dwell = 5 # down time spent wihtout moving?
+enable_dwell = 30 # enable time spent wihtout moving?
 
 #gaze range (larger gives more control, more eye strain)
-gaze_range = (-5, 5)
+gaze_range = (-5, 5) # tuple for gaze range
 
 #enable/disable driving
-car_enable = False
+car_enable = False # Boolean for car enable set to false
 
 
 #font
