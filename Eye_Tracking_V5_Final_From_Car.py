@@ -45,14 +45,14 @@ for sound in sound_list: #Loops through sound_list
 camera_index = 0 #index for camera
 
 #mediapipe mesh variables
-mp_face_mesh = mp.solutions.face_mesh
-mp_drawing = mp.solutions.drawing_utils
-mp_drawing_styles = mp.solutions.drawing_styles
-face_mesh = mp_face_mesh.FaceMesh(refine_landmarks=True)
+mp_face_mesh = mp.solutions.face_mesh # initializes the face_mesh class (which is used for facial landmark detection)
+mp_drawing = mp.solutions.drawing_utils # initializes the drawing method (which uses lots of unique and different styles to detect the landmarks on the images)
+mp_drawing_styles = mp.solutions.drawing_styles # initializes drawing_styles method (which would give some extra styles of drawing the results on the image)
+face_mesh = mp_face_mesh.FaceMesh(refine_landmarks=True) # initializes FaceMesh function
 
-frame = ()
-overlay = ()
-facial_landmarks = ()
+frame = () # empty frame tuple
+overlay = () # empty overlay tuple
+facial_landmarks = () # empty facial landmarks tuple
 
 #counters
 drive_timer = 0
