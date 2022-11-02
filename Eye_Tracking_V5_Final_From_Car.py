@@ -1,10 +1,13 @@
 #Testing123
-import mediapipe as mp #import MediaPipe Python package
+import mediapipe as mp # imports MediaPipe Python packages
 # MediaPipe: Library used to detect face and hand landmarks
-import cv2
-import numpy as np
-import math
-import itertools
+import cv2 # imports opencv-python packages
+# opencv-python: pre-built CPU-only OpenCV packages for Python
+import numpy as np # imports NumPy Python Library
+# NumPy: Python library used for working with arrays
+import math # imports module for mathematical functions
+import itertools # imports Itertool module that allows for work with iterators
+# iterators: allows for iteration or traversal through the elements of a collection
 from rpi_hardware_pwm import HardwarePWM
 import RPi.GPIO as GPIO
 
