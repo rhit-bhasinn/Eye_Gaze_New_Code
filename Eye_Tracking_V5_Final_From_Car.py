@@ -158,7 +158,7 @@ def playSound(index):
         
 
 def captureLandmarks():
-    
+#Identify facial mesh and then establish landmarks.  From landmarks, find eyes.
     global frame
     global overlay
     global facial_landmarks
