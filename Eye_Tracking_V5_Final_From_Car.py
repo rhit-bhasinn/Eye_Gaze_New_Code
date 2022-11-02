@@ -35,15 +35,14 @@ GPIO.output(light_list[0], 1) #sets GPIO pin 16 to high
 #     print(".")
 
 #sounds
-sound_list = (6,13)
+sound_list = (6,13) #tuple (similar to list) for sound pin numbers
 
-for sound in sound_list:
-    GPIO.setup(sound, GPIO.OUT)
+for sound in sound_list: #Loops through sound_list
+    GPIO.setup(sound, GPIO.OUT) # sets GPIO pins as outputs
 
 
 #global variables:
-
-camera_index = 0
+camera_index = 0 #index for camera
 
 #mediapipe mesh variables
 mp_face_mesh = mp.solutions.face_mesh
