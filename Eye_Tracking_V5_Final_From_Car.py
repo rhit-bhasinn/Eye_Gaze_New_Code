@@ -78,21 +78,22 @@ car_enable = False # Boolean for car enable set to false
 
 
 #font
-font = cv2.FONT_HERSHEY_PLAIN
+font = cv2.FONT_HERSHEY_PLAIN # Changes font type (can put font on images)
 
+# Function for finding the distance between two points
 def distance(point1, point2):
-    x1,y1 = point1
-    x2,y2 = point2
-    return math.sqrt(pow((x2-x1),2) + pow((y2-y1),2))
+    x1,y1 = point1 # point1 argument used to define x1 and y1
+    x2,y2 = point2 # point2 argument used to define x2 and y2
+    return math.sqrt(pow((x2-x1),2) + pow((y2-y1),2)) #distance formula
 
-
+# Function for reseting car
 def resetCar():
     
-    global steer
-    global drive
+    global steer #Creates global variable steer within function
+    global drive #Creates global variable drive within function
     
-    steer.change_duty_cycle(50)
-    drive.change_duty_cycle(50)
+    steer.change_duty_cycle(50) # Changes steer hardware PWM duty cycle to 50
+    drive.change_duty_cycle(50) # Changes drive hardware PWM duty cycle to 50
     
 def carOutput(gaze):
     #map gaze output from 0 to 100, 50 in the middle
