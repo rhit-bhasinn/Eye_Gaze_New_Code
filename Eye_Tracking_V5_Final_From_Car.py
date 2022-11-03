@@ -106,7 +106,7 @@ def carOutput(gaze):
     elif gaze_out > 100:
         gaze_out = 100
 
-    steer.change_duty_cycle(gaze_out)  # 100% turns completely to right and 0% is completely left and 50% is straight PMW is used for control power of motor for turn.
+    steer.change_duty_cycle(gaze_out)  # 100% turns completely to right and 0% is completely left and 50% is straight PMW is used to control power of motor for turn.
     drive.change_duty_cycle(75) # Always set to drive at 75 %
     
     cv2.putText(overlay, str(gaze_out), (50, 260), font, 4, (255,0,255), 5)
