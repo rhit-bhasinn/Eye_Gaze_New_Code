@@ -92,7 +92,8 @@ def resetCar():
     
     global steer #Creates global variable steer within function
     global drive #Creates global variable drive within function
-    
+
+    #50% is straight for start
     steer.change_duty_cycle(50) # Changes steer hardware PWM duty cycle to 50% (50% = half of the time on and the other half off)
     drive.change_duty_cycle(50) # Changes drive hardware PWM duty cycle to 50% (50% = half of the time on and the other half off)
     
@@ -104,9 +105,9 @@ def carOutput(gaze):
         gaze_out = 0
     elif gaze_out > 100:
         gaze_out = 100
-    
-    steer.change_duty_cycle(gaze_out)
-    drive.change_duty_cycle(75)
+
+    steer.change_duty_cycle(gaze_out)  # 100% turns completely to right and 0% is completely left and 50% is straight PMW is used for control power of motor for turn.
+    drive.change_duty_cycle(75) # Always set to drive at 75 %
     
     cv2.putText(overlay, str(gaze_out), (50, 260), font, 4, (255,0,255), 5)
     
